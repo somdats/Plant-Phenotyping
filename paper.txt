@@ -1,0 +1,90 @@
+Phenotyping plays an important role in plant sciences. Traditionally, a lot of the activities
+required substantial manual work. Over the last decade, however, automated plant phenotyping
+has been receiving increasing interest, also in other disciplines such as robotics  or 
+computer vision. One relevant aspect in this context relates to obtaining relevant features
+of plants, often referred to as phenotypic traits, in an automated manner . Several
+phenotyping systems [have been developed for greenhouse environments and are
+also available commercially. Other systems such as  have been designed to
+acquire plant data directly from the fields or estimate information about plants for management
+actions. These phenotyping systems have been used for several applications such as plant growth
+monitoring, drought stress analysis, canopy cover estimation, horticulture etc. Several approaches  aim at obtaining traits at a coarse resolution over the entire
+field using image data captured from UAVs as well as from ground robots. More recently, 3D
+laser data has been used in many agricultural applications such as  and analyzed to
+obtain phenotypic traits with high fidelity.
+
+
+More recently, 3D laser data has been used in many agricultural applications such as [38–40] and analyzed to
+obtain phenotypic traits with high fidelity . Li et al. [42] and Paproki et al. [43] analyze
+time-series point cloud data to detect topological events such as branching, decay and track
+the growth of different organs. While both works emphasize obtaining phenotypic traits at an
+organ level, our focus in this paper is on developing basic techniques for matching as well registering
+temporally separated scans of individual plants using the whole point cloud data. This
+technique forms the basis for tracking phenotypic traits over time.
+
+The iterative beam search algorithm is an optimization technique used to search through large state spaces efficiently by iteratively exploring a subset of the most promising candidate solutions, known as the beam. When applied to temporal data in the context of hidden Markov models (HMMs), the iterative beam search can enhance the efficiency of inference tasks such as sequence alignment, segmentation, or classification.
+
+In this approach, the beam search algorithm is adapted to iteratively explore the space of possible state sequences in the HMM, considering temporal dependencies between observations. At each iteration, the algorithm maintains a limited number of candidate state sequences, known as the beam width, which are expanded based on their likelihood of generating the observed data.
+
+By iteratively refining the set of candidate state sequences, the iterative beam search algorithm aims to efficiently explore the space of possible temporal alignments or segmentations while avoiding exhaustive search. This can lead to significant computational savings, especially when dealing with large datasets or complex temporal patterns.
+
+Overall, the combination of iterative beam search with hidden Markov models enables effective inference on temporal data, allowing for tasks such as sequence analysis, pattern recognition, or time series prediction to be performed efficiently and accurately.
+
+Yes, the iterative beam search algorithm can be adapted for point cloud correspondence matching, particularly in scenarios where the correspondence problem involves temporal or sequential data. Here's how it could work:
+
+Initialization: Start by initializing a set of candidate correspondences between points in two point clouds.
+
+Scoring Function: Define a scoring function that evaluates the likelihood or quality of each correspondence based on factors such as geometric consistency, distance metrics, or contextual information.
+
+Beam Expansion: At each iteration, expand the beam by considering new candidate correspondences based on their scores. The beam represents a subset of the most promising candidate correspondences.
+
+Beam Pruning: Keep only the top-scoring correspondences in the beam, discarding less promising candidates to maintain computational efficiency.
+
+Iteration: Repeat the beam expansion and pruning process iteratively until convergence or a maximum number of iterations is reached.
+
+Output: Once the algorithm converges, the final set of correspondences in the beam represents the best matching between the two point clouds.
+
+By iteratively refining the set of candidate correspondences, the iterative beam search algorithm can efficiently explore the space of possible matches, leading to accurate and robust point cloud correspondence matching. This approach is particularly useful in scenarios where traditional exhaustive search methods are computationally expensive or impractical due to the size or complexity of the point clouds.
+
+avg error
+14-15 - 3.48
+15-16 - 12.16
+16-17 -79.02
+17-18 - 39.47
+18-20 -269.11
+
+For a given pair of tomato plant dataset consisiting of point cloud from the 6th and 10th day, the viterbi algorithm takes 47.34secs to find the correspondence , however, with our proposed algorithm .i.e combining iterative beam search with maximal clique and even with distance based filtering, the total time consumed is just 4.15 sec
+
+runtime
+skeleton-> 2.1s
+skeleton matching->0.97s
+registration-> 150.40s
+
+chebrolu
+skeleton->6.67s
+skeleton matchinh: 24.6
+registration ->4.60sec
+[array([ -27.62567234, -725.79324341,   65.81988525]), array([ -20.04761956, -724.12034644,   76.18233062]), array([ -30.9837389 , -725.42285156,   62.99732399]),
+
+remaining
+ add figure of failure case of chebrolu et al but good one for ours - done
+conclusion and outlook
+refurbish methodology
+add figure temporal interpolation
+include how cost is converted to probablity - done
+include the inclusion of cosine similarity in transition cost as contribution
+ 
+ 
+Future work in plant phenotyping based on spatio-temporal 4D registration could involve:
+
+Exploring advanced algorithms for more precise and efficient spatio-temporal registration, considering factors such as plant growth dynamics and environmental variations.
+Integrating multi-modal data sources, such as RGB images, hyperspectral imaging, and LiDAR, to enhance the comprehensiveness of phenotyping analyses.
+Investigating machine learning and deep learning techniques to automate feature extraction and phenotype characterization from registered 4D plant data.
+Collaborating with biologists and agronomists to validate the utility of spatio-temporal registration for real-world applications, such as crop breeding and precision agriculture.
+
+Results
+maize01
+14-15 - 8.1946
+15-16 ->8.689
+16-17 ->58.77
+17-18 >-> 51.57
+18->19 ->42.446

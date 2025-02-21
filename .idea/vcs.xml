@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Code-for-Curve-Skeleton-Extraction-via-k-Nearest-Neighbors-Based-Contraction" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/extras/mistree" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/extras/pc-skeletor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/skeletons-from-poincloud" vcs="Git" />
+  </component>
+</project>
